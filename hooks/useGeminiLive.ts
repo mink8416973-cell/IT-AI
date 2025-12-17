@@ -48,7 +48,7 @@ if (!apiKey) {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
 
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey });
 
       // Establish Live Connection
       const sessionPromise = ai.live.connect({
