@@ -29,9 +29,11 @@ export const useGeminiLive = ({ systemInstruction }: UseGeminiLiveProps) => {
 
   const connect = useCallback(async () => {
     try {
-      if (!process.env.API_KEY) {
-        throw new Error("API Key not found. Please check process.env.API_KEY");
-      }
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error("API Key not found. Please check VITE_GEMINI_API_KEY");
+}
 
       setError(null);
       setAiTranscription(""); // Clear previous text on new connection
