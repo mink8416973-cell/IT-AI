@@ -238,3 +238,4 @@ if (!apiKey) {
 
   return { connect, disconnect, isConnected, isSpeaking, error, volume, aiTranscription };
 };
+fix: use VITE_GEMINI_API_KEY for gemini
